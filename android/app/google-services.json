@@ -29,6 +29,13 @@
             {
               "client_id": "1085058756614-nshedf1fqvo1q91gcg5ve9vhve1a70ij.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1085058756614-aqinvsis38uvgotcdle83u31lg7g4h0b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gameExample"
+              }
             }
           ]
         }
