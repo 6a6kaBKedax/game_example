@@ -11,4 +11,11 @@ class HomeInitEvent extends HomeEvent {
   List<Object?> get props => [];
 }
 
+class HomeCallWebViewEvent extends HomeEvent {
+  const HomeCallWebViewEvent();
+
+  @override
+  List<Object?> get props => [];
+}
+
 
