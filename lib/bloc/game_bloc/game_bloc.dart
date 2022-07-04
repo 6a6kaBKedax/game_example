@@ -26,16 +26,15 @@ class GameBloc extends Bloc<GameEvent, GameState> {
   late final AudioPlayer _player;
 
   Future<void> _init(GameInitEvent event, Emitter<GameState> emit) async {
-    logger.d('im here');
     emit(const GameLoadingState(null, true));
     try {
-      final Box box = await Hive.openBox(HiveBoxesConsts.historyHiveBoxName);
+      final Box box = Hive.box<List<dynamic>>(HiveBoxesConsts.historyHiveBoxName);
       final data = await box.get(HiveBoxesConsts.historyHiveBoxKey);
       logger.d(data);
-      await box.close();
       if (data != null) {
-        final List<GameHistoryModel> score = jsonDecode(data);
-        emit(GameLoadedState(score, state.soundStatus));
+        final List<GameHistoryModel> newList = [];
+        (data as List<dynamic>).forEach((e) => newList.add(e));
+        emit(GameLoadedState(newList, state.soundStatus));
       } else {
         throw Exception(data);
       }
@@ -50,20 +49,19 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     try {
       final GameHistoryModel newScore = GameHistoryModel(points: event.points, time: DateTime.now());
       final List<GameHistoryModel> newList = [...?state.results, newScore];
-      newList.add(newScore);
       emit(GameLoadedState(newList, state.soundStatus));
-      final Box box = await Hive.openBox(HiveBoxesConsts.historyHiveBoxName);
-      await box.put(HiveBoxesConsts.historyHiveBoxKey, jsonEncode(newList));
-      await box.close();
+      final Box box = Hive.box<List<dynamic>>(HiveBoxesConsts.historyHiveBoxName);
+      await box.clear();
+      await box.put(HiveBoxesConsts.historyHiveBoxKey, newList);
     } catch (e) {
       logger.e(e);
       emit(GameLoadedState(state.results, state.soundStatus));
     }
   }
 
-  FutureOr<void> _makeSound(GameMakeSoundEvent event, Emitter<GameState> emit) {
+  FutureOr<void> _makeSound(GameMakeSoundEvent event, Emitter<GameState> emit) async {
     if (state.soundStatus) {
-      _player.play(AssetSource(event.path));
+      await _player.play(AssetSource(event.path));
     }
   }
 

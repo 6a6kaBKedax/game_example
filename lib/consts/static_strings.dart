@@ -6,6 +6,6 @@ class Routes{
 }
 
 class HiveBoxesConsts{
-  static const historyHiveBoxName = 'historyHiveBoxName/';
-  static const historyHiveBoxKey = 'historyHiveBoxKey/';
+  static const historyHiveBoxName = 'history-box-Name';
+  static const historyHiveBoxKey = 'historyBoxKey';
 }

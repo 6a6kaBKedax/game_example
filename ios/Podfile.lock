@@ -11,14 +11,14 @@ PODS:
   - Firebase/RemoteConfig (9.2.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 9.2.0)
-  - firebase_analytics (9.1.11):
+  - firebase_analytics (9.1.12):
     - Firebase/Analytics (= 9.2.0)
     - firebase_core
     - Flutter
   - firebase_core (1.19.1):
     - Firebase/CoreOnly (= 9.2.0)
     - Flutter
-  - firebase_remote_config (2.0.10):
+  - firebase_remote_config (2.0.11):
     - Firebase/RemoteConfig (= 9.2.0)
     - firebase_core
     - Flutter
@@ -181,9 +181,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   audioplayers_darwin: 387322cb364026a1782298c982693b1b6aa9fa1b
   Firebase: 4ba896cb8e5105d4b9e247e1c1b6222b548df55a
-  firebase_analytics: ff0cb0848b62fea2c6cf93dfd08135130f194de8
+  firebase_analytics: 62f21c400c1fe65369985fa8ba68b5ac1d939bb8
   firebase_core: 9e09bbfbf5467e459822850732f5fb648f5b1927
-  firebase_remote_config: a99557e31b31cb583d3ca70c66134099ad4b054b
+  firebase_remote_config: 03b4b7b047e586183109c66c32aed394ccb8a89f
   FirebaseABTesting: cd1ec762a0078b46a7ce91dfe5b7b8991c2dff8f
   FirebaseAnalytics: af5a03a8dff7648c7b8486f6a78b1368e0268dd3
   FirebaseCore: 0e27f2a15d8f7b7ef11e7d93e23b1cbab55d748c
