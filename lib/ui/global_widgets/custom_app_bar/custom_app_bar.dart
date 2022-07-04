@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_example/consts/style/app_fonts.dart';
 import 'package:game_example/consts/style/app_gradients.dart';
-import 'package:game_example/consts/style/app_shadows.dart';
 import 'package:game_example/ui/global_widgets/global_button/global_button.dart';
 
 import '../../../consts/static_strings.dart';

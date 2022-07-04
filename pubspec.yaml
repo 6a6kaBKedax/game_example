@@ -52,7 +52,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/png/
-    - assets/mp3/
+    - assets/wav/55079-ben-yes.wav
+    - assets/wav/55080-ben-no.wav
 
   uses-material-design: true
 

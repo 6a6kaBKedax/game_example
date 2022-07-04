@@ -6,6 +6,6 @@ class AppImagesConsts {
 }
 
 class AppSoundsConsts {
-  static const String yes = 'assets/mp3/55079-ben-yes.mp3';
-  static const String no = 'assets/mp3/55080-ben-no.mp3';
+  static const String yes = 'wav/55079-ben-yes.wav';
+  static const String no = 'wav/55080-ben-no.wav';
 }
