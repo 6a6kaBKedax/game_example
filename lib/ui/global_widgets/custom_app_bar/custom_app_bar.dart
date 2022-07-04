@@ -4,6 +4,8 @@ import 'package:game_example/consts/style/app_gradients.dart';
 import 'package:game_example/consts/style/app_shadows.dart';
 import 'package:game_example/ui/global_widgets/global_button/global_button.dart';
 
+import '../../../consts/static_strings.dart';
+
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -53,17 +55,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       ),
                     ),
                     GlobalButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed(Routes.snakeScreen);
+                      },
                       text: 'new game',
                       style: AppFonts.juraW400Size36White,
                       activateOnHoldFunctionality: true,
                       onHoverTextStyle: AppFonts.juraW400Size36Green,
-                      shadow: AppShadows.mediumShadow,
-                      onHoverShadow: AppShadows.mediumShadowBlue,
                     ),
                     const SizedBox(height: 28.0),
                     GlobalButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed(Routes.snakeScreen);
+                      },
                       text: 'continue',
                       style: AppFonts.juraW400Size36White,
                       activateOnHoldFunctionality: true,
@@ -71,7 +75,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ),
                     const SizedBox(height: 31.0),
                     GlobalButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed(Routes.historyScreen);
+                      },
                       text: 'history',
                       style: AppFonts.juraW400Size36White,
                       activateOnHoldFunctionality: true,
@@ -79,7 +85,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ),
                     const SizedBox(height: 27.0),
                     GlobalButton(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed(Routes.settingsScreen);
+                      },
                       text: 'settings',
                       style: AppFonts.juraW400Size36White,
                       activateOnHoldFunctionality: true,

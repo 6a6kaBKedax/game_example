@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:equatable/equatable.dart';
@@ -30,7 +29,6 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     try {
       final Box box = Hive.box<List<dynamic>>(HiveBoxesConsts.historyHiveBoxName);
       final data = await box.get(HiveBoxesConsts.historyHiveBoxKey);
-      logger.d(data);
       if (data != null) {
         final List<GameHistoryModel> newList = [];
         (data as List<dynamic>).forEach((e) => newList.add(e));
