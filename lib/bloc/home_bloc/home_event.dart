@@ -11,11 +11,11 @@ class HomeInitEvent extends HomeEvent {
   List<Object?> get props => [];
 }
 
-class HomeCallWebViewEvent extends HomeEvent {
-  const HomeCallWebViewEvent();
+class HomeInitSignalViewEvent extends HomeEvent {
+  const HomeInitSignalViewEvent(this.tag);
+
+  final String tag;
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [tag];
 }
-
-

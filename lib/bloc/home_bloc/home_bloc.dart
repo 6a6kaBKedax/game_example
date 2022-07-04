@@ -14,7 +14,7 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(const HomeInitial()) {
     on<HomeInitEvent>(_init);
-    on<HomeCallWebViewEvent>(_callWebView);
+    on<HomeInitSignalViewEvent>(_initSignal);
   }
 
   FutureOr<void> _init(HomeInitEvent event, Emitter<HomeState> emit) {
@@ -26,9 +26,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  FutureOr<void> _callWebView(HomeCallWebViewEvent event, Emitter<HomeState> emit) {
+  FutureOr<void> _initSignal(HomeInitSignalViewEvent event, Emitter<HomeState> emit) {
     try {
-      OneSignalService.instance.makeSignal('about', DateTime.now().toString());
+      OneSignalService.instance.makeSignal(event.tag, DateTime.now().toString());
     } catch (e) {
       logger.e(e);
     }

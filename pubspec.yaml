@@ -36,6 +36,9 @@ dependencies:
   google_fonts: ^3.0.1
   onesignal_flutter: ^3.3.2
   webview_flutter: ^3.0.4
+  hive: ^2.2.3
+  audioplayers: ^1.0.1
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +50,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/png/
+    - assets/mp3/
 
   uses-material-design: true
 
